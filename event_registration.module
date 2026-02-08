@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_mail().
+ */
+function event_registration_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'registration_confirmation':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Registration Confirmation: @event', ['@event' => $params['event_name']]);
+      $message['body'][] = t('Hello @name,', ['@name' => $params['name']]);
+      $message['body'][] = t('You have successfully registered for @event on @date.', [
+        '@event' => $params['event_name'],
+        '@date' => $params['event_date'],
+      ]);
+      break;
+  }
+}
