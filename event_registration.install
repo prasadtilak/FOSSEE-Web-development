@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function event_registration_schema() {
+  $schema['event_config'] = [
+    'fields' => [
+      'id' => ['type' => 'serial', 'not null' => TRUE],
+      'reg_start' => ['type' => 'varchar', 'length' => 20, 'not null' => TRUE],
+      'reg_end' => ['type' => 'varchar', 'length' => 20, 'not null' => TRUE],
+      'event_date' => ['type' => 'varchar', 'length' => 20, 'not null' => TRUE],
+      'event_name' => ['type' => 'varchar', 'length' => 255, 'not null' => TRUE],
+      'category' => ['type' => 'varchar', 'length' => 100, 'not null' => TRUE],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['event_registrations'] = [
+    'fields' => [
+      'id' => ['type' => 'serial', 'not null' => TRUE],
+      'full_name' => ['type' => 'varchar', 'length' => 255, 'not null' => TRUE],
+      'email' => ['type' => 'varchar', 'length' => 255, 'not null' => TRUE],
+      'college_name' => ['type' => 'varchar', 'length' => 255, 'not null' => TRUE],
+      'department' => ['type' => 'varchar', 'length' => 255, 'not null' => TRUE],
+      'event_id' => ['type' => 'int', 'not null' => TRUE],
+      'created' => ['type' => 'int', 'not null' => TRUE],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
