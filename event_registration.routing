@@ -1,0 +1,15 @@
+event_registration.user_form:
+  path: '/event/register'
+  defaults:
+    _form: '\Drupal\event_registration\Form\RegistrationForm'
+    _title: 'Event Registration'
+  requirements:
+    _permission: 'access content'
+
+event_registration.admin_settings:
+  path: '/admin/config/services/event-registration'
+  defaults:
+    _form: '\Drupal\event_registration\Form\SettingsForm'
+    _title: 'Event Registration Settings'
+  requirements:
+    _permission: 'administer site configuration'
