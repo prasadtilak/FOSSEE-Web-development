@@ -1,0 +1,17 @@
+event_registration/
+├── config/install/event_registration.settings.yml
+├── src/
+│   ├── Controller/
+│   │   └── RegistrationAdminController.php (For the CSV Export)
+│   ├── Form/
+│   │   ├── EventConfigForm.php (Admin event setup)
+│   │   ├── RegistrationForm.php (Public registration)
+│   │   └── SettingsForm.php (Config API for admin email)
+│   ├── RegistrationService.php (Business logic & DB interactions)
+│   └── Plugin/Block/ (Optional)
+├── event_registration.install (Schema definition)
+├── event_registration.module (Mail hooks)
+├── event_registration.routing.yml
+├── event_registration.permissions.yml
+├── composer.json
+└── README.md
